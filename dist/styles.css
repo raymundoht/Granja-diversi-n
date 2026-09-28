@@ -130,17 +130,17 @@ nav a:hover {
 
 /* Header Button - compact and elegant */
 header .button {
-  padding: 9px 18px;
-  font-size: 13px;
-  gap: 8px;
+  padding: 6px 14px;
+  font-size: 11.5px;
+  gap: 5px;
   font-weight: 600;
   border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(190, 57, 49, 0.25);
+  box-shadow: 0 3px 10px rgba(190, 57, 49, 0.2);
   white-space: nowrap;
 }
 
 header .button span {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* Global Button */
@@ -931,9 +931,9 @@ dialog h2 {
     padding: 0 12px 0 22px;
   }
   header .button {
-    font-size: 12px;
-    padding: 8px 14px;
-    gap: 6px;
+    font-size: 11px;
+    padding: 5px 12px;
+    gap: 4px;
   }
   nav {
     gap: 16px;
@@ -1001,9 +1001,9 @@ dialog h2 {
     font-size: 9px;
   }
   header .button {
-    padding: 7px 12px;
-    font-size: 11px;
-    gap: 6px;
+    padding: 5px 10px;
+    font-size: 10px;
+    gap: 4px;
   }
   header .button span {
     display: none;

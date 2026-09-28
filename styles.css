@@ -1254,9 +1254,13 @@ dialog h2 {
     color: white;
     font-size: 13px;
     font-weight: bold;
+    text-decoration: none;
   }
-  .mobile-bar button {
+  .mobile-bar a.whatsapp,
+  .mobile-bar button.whatsapp,
+  .mobile-bar .whatsapp {
     background: #25d366;
+    color: white;
     display: inline-flex;
     align-items: center;
     justify-content: center;

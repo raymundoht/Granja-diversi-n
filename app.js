@@ -6,15 +6,16 @@ function showNotice(title, text) {
   notice.showModal();
 }
 
-// Prefijo celular / WhatsApp de Granjas Diversión
-const WHATSAPP_PHONE = '52614';
+// Teléfono celular y WhatsApp oficial de Granjas Diversión
+const WHATSAPP_PHONE = '526142546297';
 
-document.querySelectorAll('.whatsapp').forEach(button => {
-  button.addEventListener('click', () => {
-    if (WHATSAPP_PHONE && WHATSAPP_PHONE.length >= 10) {
-      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent('Hola, me interesa recibir información sobre los terrenos y la Casa Club de Granjas Diversión.')}`, '_blank');
-    } else {
-      showNotice('Contacto por WhatsApp', 'Para atención personalizada de Granjas Diversión, puedes comunicarte al (+52 614) o déjanos tus datos en el formulario para que un asesor te contacte a la brevedad.');
+document.querySelectorAll('.whatsapp').forEach(element => {
+  element.addEventListener('click', (e) => {
+    // Si no es un enlace nativo o para asegurar apertura de WhatsApp
+    const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent('Hola, me interesa recibir información sobre los terrenos y la Casa Club de Granjas Diversión.')}`;
+    if (element.tagName.toLowerCase() !== 'a') {
+      e.preventDefault();
+      window.open(waUrl, '_blank');
     }
   });
 });

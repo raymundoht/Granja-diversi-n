@@ -89,11 +89,29 @@ header {
 
 .brand {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
   line-height: 1;
   color: var(--green);
+  text-decoration: none;
 }
 
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-text > span,
 .brand > span {
   font-size: 11px;
   letter-spacing: 4px;
@@ -101,6 +119,7 @@ header {
   opacity: 0.9;
 }
 
+.brand-text strong,
 .brand strong {
   font-size: 28px;
   letter-spacing: -1.2px;
@@ -844,10 +863,25 @@ footer > div:not(:first-child) {
   text-align: left;
   font-size: 14px;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.text-button:hover {
+.text-button:hover,
+footer a:hover {
   color: var(--green);
+}
+
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .copyright {
@@ -858,7 +892,7 @@ footer > div:not(:first-child) {
   font-size: 12px;
 }
 
-/* Floating WhatsApp */
+/* Floating WhatsApp Circular Action Button */
 .floating {
   position: fixed;
   bottom: 28px;
@@ -867,16 +901,36 @@ footer > div:not(:first-child) {
   background: #25d366;
   color: white;
   border: 2px solid white;
-  border-radius: 40px;
-  padding: 14px 22px;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-  font-size: 14px;
-  font-weight: 700;
-  transition: transform 0.2s ease;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  font-size: 0;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.floating svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
 }
 
 .floating:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.65);
+}
+
+.button.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .mobile-bar {
@@ -994,11 +1048,18 @@ dialog h2 {
   header nav {
     display: none;
   }
-  .brand strong {
-    font-size: 24px;
+  .brand-logo {
+    width: 36px;
+    height: 36px;
   }
+  .brand-text strong,
+  .brand strong {
+    font-size: 20px;
+  }
+  .brand-text > span,
   .brand > span {
-    font-size: 9px;
+    font-size: 8px;
+    letter-spacing: 2px;
   }
   header .button {
     padding: 5px 10px;
@@ -1195,7 +1256,11 @@ dialog h2 {
     font-weight: bold;
   }
   .mobile-bar button {
-    background: var(--green);
+    background: #25d366;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
   }
 }
 
